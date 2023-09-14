@@ -1,35 +1,25 @@
-# Project Name
+# ITL12
 
 Mehrere Branches besitzen verschiedene Übungsbeispiele.
 
 ## Table of Contents
 
-- [Project Name](#itl12)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Features](#features)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+- [ITL12](#itl12)
+  - [Features](#table-of-contents)
+  - [Installation](#introduction)
 
 
 
 ## Features
 
-List the main features of your project.
+Liste von den features
 
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Getting Started
-
-Start with JDK
+- Vererbung
+- Konto
 
 ### Installation
+```
+- Klonen Sie das Repository und wechseln Sie zwischen Zweigen
 
-clone repository and switch between branches
+- Starten Sie die main Methode in der IDE
+```
