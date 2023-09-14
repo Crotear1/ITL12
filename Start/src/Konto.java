@@ -1,61 +1,47 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Konto {
-    private String accountHolder;
-    private int bankCode;
-    private int accountNumber;
+class Konto {
+    private String kontoinhaber;
+    private String bankleitzahl;
+    private String kontonummer;
+    private double ueberziehungsrahmen;
+    private double kontofuehrungsgebuehren;
+    private double kontostand;
+    private String kontoart;
 
-    private int accountMaintenanceFees;
-    private int accountBalance;
-    private int accountBalanceInCents;
-
-    private ArrayList<Konto> accounts;
-
-    // Methode
-    private ArrayList<Konto> konten;
-
-        konten = new ArrayList<Konto>();
-
-    public void addKonto(Konto konto) {
-        konten.add(konto);
+    public Konto(String kontoinhaber, String bankleitzahl, String kontonummer, double ueberziehungsrahmen,
+                 double kontofuehrungsgebuehren, double kontostand, String kontoart) {
+        this.kontoinhaber = kontoinhaber;
+        this.bankleitzahl = bankleitzahl;
+        this.kontonummer = kontonummer;
+        this.ueberziehungsrahmen = ueberziehungsrahmen;
+        this.kontofuehrungsgebuehren = kontofuehrungsgebuehren;
+        this.kontostand = kontostand;
+        this.kontoart = kontoart;
     }
 
-    public void removeKonto(Konto konto) {
-        konten.remove(konto);
-    }
-    public void deposit(double amount) {
-        this.accountBalance += amount;
+    public void einzahlen(double betrag) {
+        kontostand += betrag;
+        System.out.println("Einzahlung erfolgreich. Neuer Kontostand: " + kontostand);
     }
 
-    public void withdraw(double amount) {
-        if (this.accountBalance - amount >= -ueberziehungsrahmen) {
-            this.accountBalance -= amount;
+    public void abheben(double betrag) {
+        if (betrag > kontostand + ueberziehungsrahmen) {
+            System.out.println("Fehler: Nicht genug Geld auf dem Konto.");
         } else {
-            System.out.println("Error: Not enough money on your account");
+            kontostand -= betrag;
+            System.out.println("Abhebung erfolgreich. Neuer Kontostand: " + kontostand);
         }
     }
 
-    public void accountState() {
-        System.out.println("Kontostand: " + this.accountBalance);
-    }
-
-    public void kontoAnlegen() {
-        // Code to create a new account
-    }
-
-    public void kontoAufloesen() {
-        // Code to close an account
-    }
-
-    void setAccountHolder(String accountHolder) {
-        this.accountHolder = accountHolder;
-    }
-    // set random account bank code
-    void setBankCode() {
-        this.bankCode = (int) (Math.random() * 100000);
-    }
-    // set random account number
-    void setAccountNumber() {
-        this.accountNumber = (int) (Math.random() * 100000);
+    public void kontoauszug() {
+        System.out.println("Kontoinhaber: " + kontoinhaber);
+        System.out.println("Bankleitzahl: " + bankleitzahl);
+        System.out.println("Kontonummer: " + kontonummer);
+        System.out.println("Überziehungsrahmen: " + ueberziehungsrahmen);
+        System.out.println("Kontoführungsgebühren: " + kontofuehrungsgebuehren);
+        System.out.println("Kontostand: " + kontostand);
+        System.out.println("Kontoart: " + kontoart);
     }
 }

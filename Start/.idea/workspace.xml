@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Girokonto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Konto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kreditkonto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sparkonto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Girokonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Girokonto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Konto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Konto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kreditkonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kreditkonto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sparkonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sparkonto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
