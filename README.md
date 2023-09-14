@@ -27,7 +27,7 @@ public class Main {
 }
 
 ```
-![Local Image](image.png)
+![Local Image](image.PNG)
 
 ### Installation
 - Klonen Sie das Repository und wechseln Sie zwischen Zweigen
