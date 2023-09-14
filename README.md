@@ -18,8 +18,9 @@ Liste von den features
 - Konto
 
 ### Installation
-```
 - Klonen Sie das Repository und wechseln Sie zwischen Zweigen
 
 - Starten Sie die main Methode in der IDE
+```
+git clone https://github.com/Crotear1/ITL12.git
 ```
