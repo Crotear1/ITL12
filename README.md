@@ -27,6 +27,7 @@ public class Main {
 }
 
 ```
+![Local Image](image.png)
 
 ### Installation
 - Klonen Sie das Repository und wechseln Sie zwischen Zweigen
@@ -35,3 +36,4 @@ public class Main {
 ```
 git clone https://github.com/Crotear1/ITL12.git
 ```
+
