@@ -36,6 +36,10 @@ class Konto {
         this.sparkontos.add(sparkontos);
     }
 
+    public void tranferMoney(Konto absender, Konto empfänger, float number){
+
+    }
+
     public float getGirokontoByKontonummer(int number) {
         for (int i = 0; i < this.girokontos.size(); i++) {
             Girokonto x = (Girokonto) this.girokontos.get(i);

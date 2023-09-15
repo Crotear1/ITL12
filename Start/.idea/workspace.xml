@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Girokonto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Girokonto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Konto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Konto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Kreditkonto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Kreditkonto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Sparkonto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Sparkonto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Girokonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Girokonto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Konto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Konto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kreditkonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kreditkonto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sparkonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sparkonto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694763228540</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="++ withdraw, deposit">
+      <created>1694770767329</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694770767329</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,7 +91,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="saving kontos amk" />
-    <option name="LAST_COMMIT_MESSAGE" value="saving kontos amk" />
+    <MESSAGE value="++ withdraw, deposit" />
+    <option name="LAST_COMMIT_MESSAGE" value="++ withdraw, deposit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -105,7 +104,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Konto.java</url>
-          <line>39</line>
+          <line>43</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

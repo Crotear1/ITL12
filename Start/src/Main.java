@@ -146,41 +146,60 @@ public class Main {
                     }
                     break;
                 case 6:
-                    /**
-                     System.out.println("Kontonummer des Absenders: ");
-                     String kontonummer6a = scanner.next();
-                     System.out.println("Kontonummer des Empfängers: ");
-                     String kontonummer6b = scanner.next();
-                     System.out.println("Betrag: ");
-                     double betrag6 = scanner.nextDouble();
-                     boolean kontoGefundenA = false;
-                     boolean kontoGefundenB = false;
-                     Konto kontoA = null;
-                     Konto kontoB = null;
-                     for (Konto konto : konten) {
-                     if (konto.getKontonummer().equals(kontonummer6a)) {
-                     kontoA = konto;
-                     kontoGefundenA = true;
-                     }
-                     if (konto.getKontonummer().equals(kontonummer6b)) {
-                     kontoB = konto;
-                     kontoGefundenB = true;
-                     }
-                     if (kontoGefundenA && kontoGefundenB) {
-                     break;
-                     }
-                     }
-                     if (!kontoGefundenA) {
-                     System.out.println("Fehler: Absender-Konto nicht gefunden.");
-                     } else if (!kontoGefundenB) {
-                     System.out.println("Fehler: Empfänger-Konto nicht gefunden.");
-                     } else {
-                     kontoA.abheben(betrag6);
-                     kontoB.einzahlen(betrag6);
-                     System.out.println("Überweisung erfolgreich.");
-                     }
-                     break;
-                     **/
+                    System.out.println("Kontonummer des Absenders: ");
+                    int kontonummer6a = Integer.parseInt(scanner.next());
+                    System.out.println("Kontonummer des Empfängers: ");
+                    int kontonummer6b = Integer.parseInt(scanner.next());
+                    System.out.println("Betrag: ");
+                    double betrag6 = scanner.nextDouble();
+                    float ueberziehungsrahmen2 = 0;
+                    kontoGefunden = false;
+                    boolean breakLoop3 = false;
+                    Konto kontoReceiver = null;
+                    Konto kontoSender = null;
+                    for (Konto konto : konten) {
+                        if (konto.getKontonummer().equals(String.valueOf(kontonummer6a))) {
+                            kontoSender = (Konto) konto;
+                            switch (konto.getKontoTyp().toLowerCase()) {
+                                case "girokonto":
+                                    ueberziehungsrahmen2 = konto.getGirokontoByKontonummer(kontonummer6a);
+                                    if (ueberziehungsrahmen2 == 0) {
+                                        System.out.println("Fehler: Konto nicht gefunden.");
+                                        breakLoop3 = true;
+                                        break;
+                                    }
+                                    break;
+                                case "kreditkonto":
+                                    ueberziehungsrahmen2 = konto.getKreditkontoByKontonummer(kontonummer6a);
+                                    if (ueberziehungsrahmen2 == 0) {
+                                        System.out.println("Fehler: Konto nicht gefunden.");
+                                        breakLoop3 = true;
+                                        break;
+                                    }
+                                    break;
+                                case "sparkonto":
+                                    break;
+                                default:
+                                    System.out.println("Konto konnte nicht angelegt werden. Bitte geben Sie eine gültige Kontoart ein.");
+                                    breakLoop3 = true;
+                                    break;
+                            }
+                            if (breakLoop3) {
+                                break;
+                            }
+                            kontoGefunden = true;
+                        }
+                        else if (konto.getKontonummer().equals(String.valueOf(kontonummer6b))) {
+                            kontoReceiver = (Konto) konto;
+                        }
+                    }
+                    if (!kontoGefunden) {
+                        System.out.println("Fehler: Konto nicht gefunden.");
+                    } else if (kontoSender != null && kontoReceiver != null) {
+                        kontoSender.abheben(betrag6, ueberziehungsrahmen2);
+                        kontoReceiver.einzahlen(betrag6);
+                    }
+                    break;
                 case 5:
                     System.out.println("Welche Kontoart möchten Sie abrufen? 1. Girokonto 2. Kreditkonto 3. Sparkonto 4. Alle");
                     int kontoart7 = scanner.nextInt();
