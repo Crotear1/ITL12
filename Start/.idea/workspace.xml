@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Start/Konto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Konto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Start/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Konto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Konto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -52,6 +55,20 @@
       <recent name="C:\Users\Kevin\Documents\GitHub\ITL12\Start\src" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Start" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694770767329</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="++ transfer money method">
+      <created>1694771638144</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694771638144</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,16 +116,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="saving kontos amk" />
     <MESSAGE value="++ withdraw, deposit" />
-    <option name="LAST_COMMIT_MESSAGE" value="++ withdraw, deposit" />
+    <MESSAGE value="++ transfer money method" />
+    <option name="LAST_COMMIT_MESSAGE" value="++ transfer money method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Konto.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Konto.java</url>
           <line>43</line>
@@ -109,8 +129,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="6" />
+          <line>177</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

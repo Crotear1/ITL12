@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -68,17 +66,37 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Kontonummer: ");
-                    String kontonummer2 = scanner.next();
-                    boolean kontoGefunden = false;
-                    for (Konto kontoUser : konten) {
-                        if (kontoUser.getKontonummer().equals(kontonummer2)) {
-                            konten.remove(kontoUser);
-                            kontoGefunden = true;
-                            System.out.println("Konto erfolgreich aufgelöst.");
+                    int kontonummer10 = Integer.parseInt(scanner.next());
+                    float ueberziehungsrahmen = 0;
+                    boolean breakLoop6 = false;
+                    boolean kontoGefunden10 = false;
+                    for (Konto konto : konten) {
+                        if (konto.getKontonummer().equals(String.valueOf(kontonummer10))) {
+                            switch (konto.getKontoTyp().toLowerCase()) {
+                                case "girokonto":
+                                    konto.deleteGirokontoByKontonummer(kontonummer10);
+                                    break;
+                                case "kreditkonto":
+                                    konto.deleteKreditkontoByKontonummer(kontonummer10);
+                                    break;
+                                case "sparkonto":
+                                    konto.deleteSparkontoByKontonummer(kontonummer10);
+                                    break;
+                                default:
+                                    System.out.println("Konto konnte nicht angelegt werden. Bitte geben Sie eine gültige Kontoart ein.");
+                                    breakLoop6 = true;
+                                    break;
+                            }
+                            if (breakLoop6) {
+                                break;
+                            }
+                            kontoGefunden10 = true;
+                            konten.remove(konto);
+                            System.out.println("Konto erfolgreich gelöscht.");
                             break;
                         }
                     }
-                    if (!kontoGefunden) {
+                    if (!kontoGefunden10) {
                         System.out.println("Fehler: Konto nicht gefunden.");
                     }
                     break;
@@ -87,7 +105,7 @@ public class Main {
                     String kontonummer3 = scanner.next();
                     System.out.println("Betrag: ");
                     double betrag3 = scanner.nextDouble();
-                    kontoGefunden = false;
+                    boolean kontoGefunden = false;
                     for (Konto konto : konten) {
                         if (konto.getKontonummer().equals(kontonummer3)) {
                             konto.einzahlen(betrag3);
@@ -104,23 +122,23 @@ public class Main {
                     int kontonummer4 = Integer.parseInt(scanner.next());
                     System.out.println("Betrag: ");
                     double betrag4 = scanner.nextDouble();
-                    float ueberziehungsrahmen = 0;
+                    float ueberziehungsrahmen2 = 0;
                     kontoGefunden = false;
                     boolean breakLoop2 = false;
                     for (Konto konto : konten) {
                         if (konto.getKontonummer().equals(String.valueOf(kontonummer4))) {
                             switch (konto.getKontoTyp().toLowerCase()) {
                                 case "girokonto":
-                                    ueberziehungsrahmen = konto.getGirokontoByKontonummer(kontonummer4);
-                                    if (ueberziehungsrahmen == 0) {
+                                    ueberziehungsrahmen2 = konto.getGirokontoByKontonummer(kontonummer4);
+                                    if (ueberziehungsrahmen2 == 0) {
                                         System.out.println("Fehler: Konto nicht gefunden.");
                                         breakLoop2 = true;
                                         break;
                                     }
                                     break;
                                 case "kreditkonto":
-                                    ueberziehungsrahmen = konto.getKreditkontoByKontonummer(kontonummer4);
-                                    if (ueberziehungsrahmen == 0) {
+                                    ueberziehungsrahmen2 = konto.getKreditkontoByKontonummer(kontonummer4);
+                                    if (ueberziehungsrahmen2 == 0) {
                                         System.out.println("Fehler: Konto nicht gefunden.");
                                         breakLoop2 = true;
                                         break;
@@ -136,7 +154,7 @@ public class Main {
                             if (breakLoop2) {
                                 break;
                             }
-                            konto.abheben(betrag4, ueberziehungsrahmen);
+                            konto.abheben(betrag4, ueberziehungsrahmen2);
                             kontoGefunden = true;
                             break;
                         }
@@ -152,7 +170,7 @@ public class Main {
                     int kontonummer6b = Integer.parseInt(scanner.next());
                     System.out.println("Betrag: ");
                     double betrag6 = scanner.nextDouble();
-                    float ueberziehungsrahmen2 = 0;
+                    float ueberziehungsrahmen3 = 0;
                     kontoGefunden = false;
                     boolean breakLoop3 = false;
                     Konto kontoReceiver = null;
@@ -162,16 +180,16 @@ public class Main {
                             kontoSender = (Konto) konto;
                             switch (konto.getKontoTyp().toLowerCase()) {
                                 case "girokonto":
-                                    ueberziehungsrahmen2 = konto.getGirokontoByKontonummer(kontonummer6a);
-                                    if (ueberziehungsrahmen2 == 0) {
+                                    ueberziehungsrahmen3 = konto.getGirokontoByKontonummer(kontonummer6a);
+                                    if (ueberziehungsrahmen3 == 0) {
                                         System.out.println("Fehler: Konto nicht gefunden.");
                                         breakLoop3 = true;
                                         break;
                                     }
                                     break;
                                 case "kreditkonto":
-                                    ueberziehungsrahmen2 = konto.getKreditkontoByKontonummer(kontonummer6a);
-                                    if (ueberziehungsrahmen2 == 0) {
+                                    ueberziehungsrahmen3 = konto.getKreditkontoByKontonummer(kontonummer6a);
+                                    if (ueberziehungsrahmen3 == 0) {
                                         System.out.println("Fehler: Konto nicht gefunden.");
                                         breakLoop3 = true;
                                         break;
@@ -196,7 +214,7 @@ public class Main {
                     if (!kontoGefunden) {
                         System.out.println("Fehler: Konto nicht gefunden.");
                     } else if (kontoSender != null && kontoReceiver != null) {
-                        kontoSender.abheben(betrag6, ueberziehungsrahmen2);
+                        kontoSender.abheben(betrag6, ueberziehungsrahmen3);
                         kontoReceiver.einzahlen(betrag6);
                     }
                     break;

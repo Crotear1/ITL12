@@ -59,6 +59,32 @@ class Konto {
         return 0;
     }
 
+    public void deleteGirokontoByKontonummer(int number) {
+        for (int i = 0; i < this.girokontos.size(); i++) {
+            Girokonto x = (Girokonto) this.girokontos.get(i);
+            if (Integer.parseInt(x.getKontonummer()) == number) {
+                this.girokontos.remove(i);
+            }
+        }
+    }
+
+    public void deleteKreditkontoByKontonummer(int number) {
+        for (int i = 0; i < this.kreditkontos.size(); i++) {
+            Kreditkonto x = (Kreditkonto) this.kreditkontos.get(i);
+            if (Integer.parseInt(x.getKontonummer()) == number) {
+                this.kreditkontos.remove(i);
+            }
+        }
+    }
+
+    public void deleteSparkontoByKontonummer(int number) {
+        for (int i = 0; i < this.sparkontos.size(); i++) {
+            Sparkonto x = (Sparkonto) this.sparkontos.get(i);
+            if (Integer.parseInt(x.getKontonummer()) == number) {
+                this.sparkontos.remove(i);
+            }
+        }
+    }
     public void getGirokontos() {
         for (int i = 0; i < this.girokontos.size(); i++) {
             Girokonto x = (Girokonto) this.girokontos.get(i);
