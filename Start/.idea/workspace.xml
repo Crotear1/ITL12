@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Konto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Konto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Konto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Konto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694771638144</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="++ delete konto">
+      <created>1694772697785</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694772697785</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,16 +120,12 @@
     <MESSAGE value="saving kontos amk" />
     <MESSAGE value="++ withdraw, deposit" />
     <MESSAGE value="++ transfer money method" />
-    <option name="LAST_COMMIT_MESSAGE" value="++ transfer money method" />
+    <MESSAGE value="++ delete konto" />
+    <option name="LAST_COMMIT_MESSAGE" value="++ delete konto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Konto.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>177</line>
