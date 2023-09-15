@@ -1,12 +1,12 @@
-import konto.Girokonto;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Konto> konten = new ArrayList<Konto>();
-
         while (true) {
             System.out.println("1. Konto anlegen");
             System.out.println("2. Konto auflösen");
@@ -20,38 +20,36 @@ public class Main {
 
             switch (auswahl) {
                 case 1:
-                    System.out.println("Kontoinhaber: ");
-                    String kontoinhaber = scanner.next();
-                    System.out.println("Bankleitzahl: ");
-                    String bankleitzahl = scanner.next();
-                    System.out.println("Kontonummer: ");
-                    String kontonummer = scanner.next();
-                    System.out.println("Überziehungsrahmen: ");
+                    System.out.print("Kontoinhaber: ");
+                    scanner.nextLine();
+                    String kontoinhaber = scanner.nextLine();
+                    System.out.print("Bankleitzahl: ");
+                    String bankleitzahl = scanner.nextLine();
+
+                    System.out.print("Kontonummer: ");
+                    String kontonummer = scanner.nextLine();
+
+                    System.out.print("Überziehungsrahmen: ");
                     double ueberziehungsrahmen = scanner.nextDouble();
-                    System.out.println("Kontoführungsgebühren: ");
+
+                    System.out.print("Kontoführungsgebühren: ");
                     double kontofuehrungsgebuehren = scanner.nextDouble();
-                    System.out.println("Kontostand: ");
+
+                    System.out.print("Kontostand: ");
                     double kontostand = scanner.nextDouble();
-                    System.out.println("Kontoart (Girokonto, Sparkonto, Kreditkonto): ");
+
+                    System.out.print("Kontoart: ");
                     String kontoart = scanner.next();
 
-                    switch (kontoart) {
-                        case "Girokonto":
-                            konten.add(new Girokonto(kontoinhaber, bankleitzahl, kontonummer, ueberziehungsrahmen,
-                                    kontofuehrungsgebuehren, kontostand));
-                            break;
-                        case "Sparkonto":
-                            konten.add(new Sparkonto(kontoinhaber, bankleitzahl, kontonummer, ueberziehungsrahmen,
-                                    kontofuehrungsgebuehren, kontostand));
-                            break;
-                        case "Kreditkonto":
-                            konten.add(new Kreditkonto(kontoinhaber, bankleitzahl, kontonummer, ueberziehungsrahmen,
-                                    kontofuehrungsgebuehren, kontostand));
-                            break;
-                        default:
-                            System.out.println("Fehler: Ungültige Kontoart.");
-                            break;
+                    Konto konto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, kontoart); // Create a new Konto object
+                    // Add the new Konto object to the ArrayList
+                    konten.add(konto);
+                    for (int i = 0; i < konten.size(); i++) {
+                        Konto x = (Konto) konten.get(i);
+                        x.kontoauszug();
                     }
+                    System.out.println("Konto erfolgreich angelegt.");
+                    // system print für methode kontoauszug
                     break;
                 case 2:
                     /**

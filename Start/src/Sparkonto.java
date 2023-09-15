@@ -1,7 +1,6 @@
 class Sparkonto extends Konto {
-    public Sparkonto(String kontoinhaber, String bankleitzahl, String kontonummer, double ueberziehungsrahmen,
+    public Sparkonto(String kontoinhaber, String bankleitzahl, String kontonummer,
                      double kontofuehrungsgebuehren, double kontostand) {
-        super(kontoinhaber, bankleitzahl, kontonummer, ueberziehungsrahmen, kontofuehrungsgebuehren, kontostand,
-                "Sparkonto");
+        super(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, "Sparkonto");
     }
 }
