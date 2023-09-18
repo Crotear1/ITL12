@@ -38,19 +38,25 @@ public class Main {
                     boolean breakLoop = false;
                     switch (kontoart.toLowerCase()) {
                         case "girokonto":
-                            Konto konto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, kontoart); // Create a new Konto object
+                            Konto konto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                                    kontostand, kontoart); // Create a new Konto object
                             konten.add(konto);
-                            konto.setGirokontos(new Girokonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, "Girokonto", konto));
+                            konto.setGirokontos(new Girokonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                                    kontostand, "Girokonto", konto));
                             break;
                         case "kreditkonto":
-                            Konto kreditkonto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, kontoart); // Create a new Konto object
+                            Konto kreditkonto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                                    kontostand, kontoart); // Create a new Konto object
                             konten.add(kreditkonto);
-                            kreditkonto.setKreditkontos(new Kreditkonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, "Kreditkonto", kreditkonto));
+                            kreditkonto.setKreditkontos(new Kreditkonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                                    kontostand, "Kreditkonto", kreditkonto));
                             break;
                         case "sparkonto":
-                            Konto sparkonto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, kontoart); // Create a new Konto object
+                            Konto sparkonto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                                    kontostand, kontoart); // Create a new Konto object
                             konten.add(sparkonto);
-                            sparkonto.setSparkontos(new Sparkonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, "Sparkonto", sparkonto));
+                            sparkonto.setSparkontos(new Sparkonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                                    kontostand, "Sparkonto", sparkonto));
                             break;
                         default:
                             System.out.println("Konto konnte nicht angelegt werden. Bitte geben Sie eine gültige Kontoart ein.");
