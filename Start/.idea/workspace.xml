@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Deposit.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Deposit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Overview.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Overview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Withdraw.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Withdraw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_09_2023_09_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_09_2023_09_20__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transfer.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/transfer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Girokonto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Girokonto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Konto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Konto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Kreditkonto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Kreditkonto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Sparkonto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Sparkonto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Girokonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Girokonto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Konto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Konto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kreditkonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kreditkonto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sparkonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sparkonto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Overview.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -458,6 +440,14 @@
       <option name="presentableId" value="Default" />
       <updated>1450776378144</updated>
     </task>
+    <task id="LOCAL-00001" summary="finished gui .....">
+      <created>1695375974656</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695375974656</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -490,6 +480,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="finished gui ....." />
+    <option name="LAST_COMMIT_MESSAGE" value="finished gui ....." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

@@ -123,6 +123,16 @@ class Konto {
         }
     }
 
+    public void überweisen(double betrag, Konto konto) {
+        if (betrag > kontostand) {
+            System.out.println("Fehler: Nicht genug Geld auf dem Konto.");
+        } else {
+            kontostand -= betrag;
+            konto.einzahlen(betrag);
+            System.out.println("Überweisung erfolgreich. Neuer Kontostand: " + kontostand);
+        }
+    }
+
     public String kontoauszug() {
         return "Kontoinhaber: " + kontoinhaber + "\n" +
                 "Bankleitzahl: " + bankleitzahl + "\n" +

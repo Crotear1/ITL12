@@ -74,6 +74,10 @@ public class Overview {
             Withdraw withdraw = new Withdraw();
             withdraw.showOverlay(this.currentKonto.getKontonummer());
         });
+        this.überweisenButton.addActionListener(e -> {
+            transfer transfer = new transfer();
+            transfer.showOverlay();
+        });
     }
 
     public static void main(String[] args) {
