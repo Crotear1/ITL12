@@ -14,7 +14,7 @@ public class Withdraw {
 
 
     public Withdraw() {
-        frame = new JFrame("Deposit");
+        frame = new JFrame("Withdraw");
         frame.setContentPane(panel1);
         frame.pack();
         frame.setVisible(showOverlay);

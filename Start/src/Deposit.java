@@ -32,6 +32,7 @@ public class Deposit {
         });
         abbrechenButton.addActionListener(e -> {
             showOverlay = false;
+            frame.setVisible(showOverlay);
         });
     }
 
