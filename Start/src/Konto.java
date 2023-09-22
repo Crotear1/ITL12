@@ -12,11 +12,11 @@ class Konto {
     private ArrayList<Sparkonto> sparkontos = new ArrayList<Sparkonto>();
     private ArrayList<Kreditkonto> kreditkontos = new ArrayList<Kreditkonto>();
 
-    public Konto(String kontoinhaber, String bankleitzahl, String kontonummer,
+    public Konto(String kontoinhaber,
                  double kontofuehrungsgebuehren, double kontostand, String kontoTyp) {
         this.kontoinhaber = kontoinhaber;
-        this.bankleitzahl = bankleitzahl;
-        this.kontonummer = kontonummer;
+        this.bankleitzahl = "AT" + String.valueOf((int) (Math.random() * 1000000000));
+        this.kontonummer = String.valueOf((int) (Math.random() * 1000000000));
         this.kontofuehrungsgebuehren = kontofuehrungsgebuehren;
         this.kontostand = kontostand;
         this.kontoTyp = kontoTyp;
@@ -24,6 +24,10 @@ class Konto {
 
     public String getKontoTyp() {
         return kontoTyp;
+    }
+
+    public String getKontoinhaber() {
+        return kontoinhaber;
     }
 
     public void setGirokontos(Girokonto girokontos) {
@@ -109,9 +113,9 @@ class Konto {
         System.out.println("Einzahlung erfolgreich. Neuer Kontostand: " + kontostand);
     }
 
-    public void abheben(double betrag, double ueberziehungsrahmen) {
+    public void abheben(double betrag) {
 
-        if (betrag > kontostand + ueberziehungsrahmen) {
+        if (betrag > kontostand) {
             System.out.println("Fehler: Nicht genug Geld auf dem Konto.");
         } else {
             kontostand -= betrag;
@@ -119,13 +123,12 @@ class Konto {
         }
     }
 
-    public void kontoauszug() {
-        System.out.println("------ Kontoauszug -----");
-        System.out.println("Kontoinhaber: " + kontoinhaber);
-        System.out.println("Bankleitzahl: " + bankleitzahl);
-        System.out.println("Kontonummer: " + kontonummer);
-        System.out.println("Kontoführungsgebühren: " + kontofuehrungsgebuehren);
-        System.out.println("Kontostand: " + kontostand);
-        System.out.println("------------------------");
+    public String kontoauszug() {
+        return "Kontoinhaber: " + kontoinhaber + "\n" +
+                "Bankleitzahl: " + bankleitzahl + "\n" +
+                "Kontonummer: " + kontonummer + "\n" +
+                "Kontoführungsgebühren: €" + kontofuehrungsgebuehren + "\n" +
+                "Kontostand: €" + kontostand + "\n" +
+                "KontoTyp: " + kontoTyp + "\n";
     }
 }

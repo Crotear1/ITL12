@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    public static ArrayList<Konto> konten = new ArrayList<Konto>();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Konto> konten = new ArrayList<Konto>();
         while (true) {
             System.out.println("1. Konto anlegen");
             System.out.println("2. Konto auflösen");
@@ -38,24 +38,24 @@ public class Main {
                     boolean breakLoop = false;
                     switch (kontoart.toLowerCase()) {
                         case "girokonto":
-                            Konto konto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                            Konto konto = new Konto(kontoinhaber, kontofuehrungsgebuehren,
                                     kontostand, kontoart); // Create a new Konto object
                             konten.add(konto);
-                            konto.setGirokontos(new Girokonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                            konto.setGirokontos(new Girokonto(kontoinhaber, kontofuehrungsgebuehren,
                                     kontostand, "Girokonto", konto));
                             break;
                         case "kreditkonto":
-                            Konto kreditkonto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                            Konto kreditkonto = new Konto(kontoinhaber, kontofuehrungsgebuehren,
                                     kontostand, kontoart); // Create a new Konto object
                             konten.add(kreditkonto);
-                            kreditkonto.setKreditkontos(new Kreditkonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                            kreditkonto.setKreditkontos(new Kreditkonto(kontoinhaber, kontofuehrungsgebuehren,
                                     kontostand, "Kreditkonto", kreditkonto));
                             break;
                         case "sparkonto":
-                            Konto sparkonto = new Konto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                            Konto sparkonto = new Konto(kontoinhaber, kontofuehrungsgebuehren,
                                     kontostand, kontoart); // Create a new Konto object
                             konten.add(sparkonto);
-                            sparkonto.setSparkontos(new Sparkonto(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren,
+                            sparkonto.setSparkontos(new Sparkonto(kontoinhaber, kontofuehrungsgebuehren,
                                     kontostand, "Sparkonto", sparkonto));
                             break;
                         default:
@@ -160,7 +160,7 @@ public class Main {
                             if (breakLoop2) {
                                 break;
                             }
-                            konto.abheben(betrag4, ueberziehungsrahmen2);
+                            konto.abheben(betrag4);
                             kontoGefunden = true;
                             break;
                         }
@@ -220,7 +220,7 @@ public class Main {
                     if (!kontoGefunden) {
                         System.out.println("Fehler: Konto nicht gefunden.");
                     } else if (kontoSender != null && kontoReceiver != null) {
-                        kontoSender.abheben(betrag6, ueberziehungsrahmen3);
+                        kontoSender.abheben(betrag6);
                         kontoReceiver.einzahlen(betrag6);
                     }
                     break;

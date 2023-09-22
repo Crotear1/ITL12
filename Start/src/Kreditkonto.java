@@ -3,8 +3,8 @@ class Kreditkonto extends Konto {
 
     private float überziehungsrahmen = 600;
 
-    public Kreditkonto(String kontoinhaber, String bankleitzahl, String kontonummer, double kontofuehrungsgebuehren, double kontostand, String kontoart, Konto konto) {
-        super(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, "Kreditkonto");
+    public Kreditkonto(String kontoinhaber, double kontofuehrungsgebuehren, double kontostand, String kontoart, Konto konto) {
+        super(kontoinhaber, kontofuehrungsgebuehren, kontostand, "Kreditkonto");
         this.konto = (Konto) konto;
     }
 
@@ -12,8 +12,9 @@ class Kreditkonto extends Konto {
         return überziehungsrahmen;
     }
 
-    public void kontoauszug() {
+    public String kontoauszug() {
         this.konto.kontoauszug();
         System.out.println("Überziehungsrahmen: " + this.überziehungsrahmen);
+        return null;
     }
 }

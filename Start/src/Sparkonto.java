@@ -1,12 +1,13 @@
 class Sparkonto extends Konto {
     private Konto konto;
-    public Sparkonto(String kontoinhaber, String bankleitzahl, String kontonummer,
+    public Sparkonto(String kontoinhaber,
                      double kontofuehrungsgebuehren, double kontostand, String kontoart, Konto konto) {
-        super(kontoinhaber, bankleitzahl, kontonummer, kontofuehrungsgebuehren, kontostand, "Sparkonto");
+        super(kontoinhaber, kontofuehrungsgebuehren, kontostand, "Sparkonto");
         this.konto = (Konto) konto;
     }
 
-    public void kontoauszug() {
+    public String kontoauszug() {
         this.konto.kontoauszug();
+        return null;
     }
 }
