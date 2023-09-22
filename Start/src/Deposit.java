@@ -27,6 +27,8 @@ public class Deposit {
                     System.out.println("Einzahlung erfolgreich");
                 }
             }
+            showOverlay = false;
+            frame.setVisible(showOverlay);
         });
         abbrechenButton.addActionListener(e -> {
             showOverlay = false;

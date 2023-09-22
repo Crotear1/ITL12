@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.util.Objects;
 
 public class transfer {
     private JComboBox comboBox1;
@@ -48,9 +47,12 @@ public class transfer {
                     }
                 }
             }
+            showOverlay = false;
+            frame.setVisible(showOverlay);
         });
         abbrechenButton.addActionListener(e -> {
             showOverlay = false;
+            frame.setVisible(showOverlay);
         });
     }
 

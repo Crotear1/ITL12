@@ -27,9 +27,12 @@ public class Withdraw {
                     System.out.println("Einzahlung erfolgreich");
                 }
             }
+            showOverlay = false;
+            frame.setVisible(showOverlay);
         });
         abbrechenButton.addActionListener(e -> {
             showOverlay = false;
+            frame.setVisible(showOverlay);
         });
     }
 
