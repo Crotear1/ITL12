@@ -19,7 +19,7 @@ public class Overview {
         this.comboBox1.addItem("Girokonto");
         this.comboBox1.addItem("Sparkonto");
         this.comboBox1.addItem("Kreditkonto");
-
+        // create new account
         this.createButton.addActionListener(e -> {
             String type = (String) this.comboBox1.getSelectedItem();
             String name = this.textfield1.getText();
@@ -31,7 +31,6 @@ public class Overview {
                 case "Girokonto":
                     konto.setGirokontos(new Girokonto(this.textfield1.getText(), 200,
                             balance, (String) comboBox1.getSelectedItem(), konto));
-                    System.out.println("OMG Das konto wurde erstell sees");
                     this.textfield1.setText("");
                     this.textField2.setText("");
                     this.comboBox2.addItem(konto.getKontoinhaber()+" "+konto.getKontonummer());
@@ -39,7 +38,6 @@ public class Overview {
                 case "Sparkonto":
                     konto.setSparkontos(new Sparkonto(this.textfield1.getText(), 200,
                             balance, (String) comboBox1.getSelectedItem(), konto));
-                    System.out.println("OMG Das konto wurde erstell sees");
                     this.textfield1.setText("");
                     this.textField2.setText("");
                     this.comboBox2.addItem(konto.getKontoinhaber()+" "+konto.getKontonummer());
@@ -47,13 +45,14 @@ public class Overview {
                 case "Kreditkonto":
                     konto.setKreditkontos(new Kreditkonto(this.textfield1.getText(), 200,
                             balance, (String) comboBox1.getSelectedItem(), konto));
-                    System.out.println("OMG Das konto wurde erstell sees");
                     this.textfield1.setText("");
                     this.textField2.setText("");
                     this.comboBox2.addItem(konto.getKontoinhaber()+" "+konto.getKontonummer());
                     break;
             }
         });
+        // add all accounts to the combobox
+        // and set the current account to the selected one
         this.comboBox2.addItemListener(e -> {
             String[] parts = ((String) this.comboBox2.getSelectedItem()).split(" ");
             String name = parts[0];
@@ -66,6 +65,7 @@ public class Overview {
                 }
             }
         });
+        // overlay for deposit, withdraw and transfer
         this.einzahlenButton.addActionListener(e -> {
             Deposit deposit = new Deposit();
             deposit.showOverlay(this.currentKonto.getKontonummer());
@@ -79,7 +79,7 @@ public class Overview {
             transfer.showOverlay();
         });
     }
-
+    // create the JFrame
     public static void main(String[] args) {
         JFrame frame = new JFrame("Overview");
         frame.setContentPane(new Overview().panel1);

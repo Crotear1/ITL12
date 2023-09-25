@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Overview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Withdraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Withdraw.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -466,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695378519695</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed withdraw and deposit">
+      <created>1695643085173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695643085173</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -502,7 +507,8 @@
     <MESSAGE value="finished gui ....." />
     <MESSAGE value="transfer money is now working" />
     <MESSAGE value="closing button is now working lol" />
-    <option name="LAST_COMMIT_MESSAGE" value="closing button is now working lol" />
+    <MESSAGE value="fixed withdraw and deposit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed withdraw and deposit" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
