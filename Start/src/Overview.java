@@ -60,8 +60,8 @@ public class Overview {
             String  number = parts[parts.length -1];
             for (int i = 0; i < Main.konten.size(); i++) {
                 Konto x = (Konto) Main.konten.get(i);
-                this.currentKonto = x;
                 if (Objects.equals(x.getKontonummer(), number)) {
+                    this.currentKonto = x;
                     this.textArea1.setText(x.kontoauszug());
                 }
             }

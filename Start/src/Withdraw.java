@@ -42,6 +42,5 @@ public class Withdraw {
         this.frame.pack();
         this.frame.setVisible(showOverlay);
     }
-
 }
 
