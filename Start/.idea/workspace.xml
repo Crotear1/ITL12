@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="Finished Bruchrechner" />
     <list id="6b452b1e-a90d-4853-bc01-01425755baa6" name="Changes by myria" comment="">
       <change afterPath="$PROJECT_DIR$/src/test/Bruch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/Bruchrechner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Bruchrechner.java" afterDir="false" />
@@ -514,7 +512,21 @@
       <option name="project" value="LOCAL" />
       <updated>1696855430608</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Finished Bruchrechner">
+      <created>1696857064842</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696857064842</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Finished Bruchrechner">
+      <created>1696857107840</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696857107840</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">

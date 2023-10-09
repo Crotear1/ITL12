@@ -1,4 +1,5 @@
 package test;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -38,8 +39,6 @@ public class Bruchrechner {
                             Bruch bruch2 = new Bruch(Integer.parseInt(this.textField3.getText()), Integer.parseInt(this.textField4.getText()));
 
                             ArrayList ergebnis = bruch.addiere(bruch2);
-                            System.out.println(ergebnis);
-                            System.out.println(ergebnis.get(0));
 
                             this.textField5.setText(ergebnis.get(0).toString());
                             this.textField6.setText(ergebnis.get(1).toString());
@@ -60,10 +59,31 @@ public class Bruchrechner {
                         }
                         break;
                     case "/":
-                        // todo dividieren
+                        try {
+                            Bruch bruch = new Bruch(Integer.parseInt(this.textField1.getText()), Integer.parseInt(this.textField2.getText()));
+                            Bruch bruch2 = new Bruch(Integer.parseInt(this.textField3.getText()), Integer.parseInt(this.textField4.getText()));
+
+                            ArrayList ergebnis = bruch.dividiere(bruch2);
+
+                            this.textField5.setText(ergebnis.get(0).toString());
+                            this.textField6.setText(ergebnis.get(1).toString());
+                        } catch (Exception e1) {
+                            JOptionPane.showMessageDialog(this.panel1, "Die Eingabe müssen Zahlen sein");
+                        }
                         break;
                     case "*":
-                        // todo multiplikation
+                        try {
+                            Bruch bruch = new Bruch(Integer.parseInt(this.textField1.getText()), Integer.parseInt(this.textField2.getText()));
+                            Bruch bruch2 = new Bruch(Integer.parseInt(this.textField3.getText()), Integer.parseInt(this.textField4.getText()));
+
+                            ArrayList ergebnis = bruch.multipliziere(bruch2);
+
+                            this.textField5.setText(ergebnis.get(0).toString());
+                            this.textField6.setText(ergebnis.get(1).toString());
+                        } catch (Exception e1) {
+                            JOptionPane.showMessageDialog(this.panel1, "Die Eingabe müssen Zahlen sein");
+
+                        }
                         break;
                     default:
                         JOptionPane.showMessageDialog(this.panel1, "Falsche Operation");
