@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/Bruchrechner.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/Bruchrechner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Bruchrechner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Bruchrechner.java" afterDir="false" />
     </list>
     <list id="6b452b1e-a90d-4853-bc01-01425755baa6" name="Changes by myria" comment="">
       <change afterPath="$PROJECT_DIR$/src/test/Bruch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Bruchrechner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Bruchrechner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +51,18 @@
         <option value="$PROJECT_DIR$/src/java/com/javacodegeeks/example/Calculator.java" />
       </list>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/test/Bruchrechner.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="6b452b1e-a90d-4853-bc01-01425755baa6" />
+        <range start1="23" end1="24" start2="24" end2="34" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="31" end1="33" start2="41" end2="41" changelist="6b452b1e-a90d-4853-bc01-01425755baa6" />
+        <range start1="41" end1="42" start2="49" end2="59" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="44" end1="45" start2="61" end2="72" changelist="6b452b1e-a90d-4853-bc01-01425755baa6" />
+        <range start1="47" end1="48" start2="74" end2="85" changelist="6b452b1e-a90d-4853-bc01-01425755baa6" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -497,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695643085173</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bruchrechner">
+      <created>1696401016465</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696401016465</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -534,14 +550,15 @@
     <MESSAGE value="transfer money is now working" />
     <MESSAGE value="closing button is now working lol" />
     <MESSAGE value="fixed withdraw and deposit" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed withdraw and deposit" />
+    <MESSAGE value="bruchrechner" />
+    <option name="LAST_COMMIT_MESSAGE" value="bruchrechner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/Bruchrechner.java</url>
-          <line>36</line>
+          <line>50</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

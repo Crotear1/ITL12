@@ -21,7 +21,16 @@ public class Bruchrechner {
         this.comboBox1.addItem("*");
 
         this.button1.addActionListener(e -> {
-            if ((!Objects.equals(String.valueOf(this.textField1.getText()), "0") && this.textField1.getText().length() > 0) && (!Objects.equals(String.valueOf(this.textField2.getText()), "0") && (this.textField2.getText().length() > 0) && (!Objects.equals(String.valueOf(this.textField3.getText()), "0") && this.textField3.getText().length() > 0) && (!Objects.equals(String.valueOf(this.textField4.getText()), "0") && this.textField4.getText().length() > 0)) && this.comboBox1.getSelectedItem() != null) {
+            if ((!Objects.equals(String.valueOf(this.textField1.getText()), "0")
+                    && this.textField1.getText().length() > 0)
+                    && (!Objects.equals(String.valueOf(this.textField2.getText()), "0")
+                    && (this.textField2.getText().length() > 0)
+                    && (!Objects.equals(String.valueOf(this.textField3.getText()), "0")
+                    && this.textField3.getText().length() > 0)
+                    && (!Objects.equals(String.valueOf(this.textField4.getText()), "0")
+                    && this.textField4.getText().length() > 0))
+                    && this.comboBox1.getSelectedItem() != null) {
+                System.out.println((String) this.comboBox1.getSelectedItem());
                 switch ((String) this.comboBox1.getSelectedItem()) {
                     case "+":
                         try {
@@ -39,7 +48,16 @@ public class Bruchrechner {
                         }
                         break;
                     case "-":
-                        // todo minus rechnen
+                        try {
+                            Bruch bruch = new Bruch(Integer.parseInt(this.textField1.getText()), Integer.parseInt(this.textField2.getText()));
+                            Bruch bruch2 = new Bruch(Integer.parseInt(this.textField3.getText()), Integer.parseInt(this.textField4.getText()));
+
+                            ArrayList ergebnis = bruch.subtrahiere(bruch2);
+                            this.textField5.setText(ergebnis.get(0).toString());
+                            this.textField6.setText(ergebnis.get(1).toString());
+                        } catch (Exception e1) {
+                            JOptionPane.showMessageDialog(this.panel1, "Die Eingabe müssen Zahlen sein");
+                        }
                         break;
                     case "/":
                         // todo dividieren
