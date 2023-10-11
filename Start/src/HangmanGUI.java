@@ -36,6 +36,12 @@ public class HangmanGUI {
             this.wordToGuess = "_".repeat(randomWord.length());
             System.out.println(randomWord);
 
+            // show word to guess with underlines + spaces between letters
+            for (int i = 0; i < randomWord.length(); i++) {
+                wordToGuess = wordToGuess.substring(0, i) + "_" + wordToGuess.substring(i + 1);
+            }
+            showWord.setText(wordToGuess.replaceAll(".(?!$)", "$0 "));
+
         } catch (IOException e) {
             System.err.println("Fehler beim Lesen der Datei: " + e.getMessage());
         }
@@ -56,11 +62,13 @@ public class HangmanGUI {
             System.out.println("Letter is in word");
             StringBuilder wordDisplay = new StringBuilder(wordToGuess);
             // set shown word with underlines
-            showWord.setText(wordDisplay.toString());
             for (int i = 0; i < randomWord.length(); i++) {
                 if (randomWord.charAt(i) == letter.charAt(0)) {
                     wordDisplay.setCharAt(i, letter.charAt(0));
-                    showWord.setText(wordDisplay.toString());
+                    // show word to guess with underlines + spaces between letters
+                    wordToGuess = wordDisplay.toString();
+                    showWord.setText(wordToGuess.replaceAll(".(?!$)", "$0 "));
+
                 }
             }
             System.out.println("Letter is in word: " + wordToGuess);
