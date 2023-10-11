@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt2.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt3.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt4.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt5.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt6.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt7.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt8.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/Unbenannt9.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/start.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HangmanGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/HangmanGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HangmanGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HangmanGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/hangman.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/hangman1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/hangman2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/words.txt" afterDir="false" />
     </list>
     <list id="6b452b1e-a90d-4853-bc01-01425755baa6" name="Changes by myria" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,17 +230,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kevin/Documents/GitHub/ITL12/Start/src/pictures&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "230",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/Kevin/Documents/GitHub/ITL12/Start/src/pictures",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Kevin\Documents\GitHub\ITL12\Start\src\pictures" />
@@ -551,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697031460790</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="game is working">
+      <created>1697043940588</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697043940588</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -592,7 +615,8 @@
     <MESSAGE value="Finished Bruchrechner" />
     <MESSAGE value="WIP" />
     <MESSAGE value="WIP game mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP game mode" />
+    <MESSAGE value="game is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="game is working" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
