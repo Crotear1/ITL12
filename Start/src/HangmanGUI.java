@@ -11,9 +11,8 @@ public class HangmanGUI {
     private JPanel panel1;
     private JTextField textField1;
     private JButton button1;
-
+    private JLabel showWord;
     private String randomWord;
-
     private String wordToGuess;
 
     public HangmanGUI() {
@@ -34,7 +33,7 @@ public class HangmanGUI {
             // get random word
             int randomIndex = (int) (Math.random() * words.size());
             this.randomWord = words.get(randomIndex);
-            this.wordToGuess = "_".repeat(randomWord.length()); // Initialisieren Sie wordToGuess mit Platzhaltern
+            this.wordToGuess = "_".repeat(randomWord.length());
             System.out.println(randomWord);
 
         } catch (IOException e) {
@@ -56,20 +55,20 @@ public class HangmanGUI {
         if (randomWord.contains(letter)) {
             System.out.println("Letter is in word");
             StringBuilder wordDisplay = new StringBuilder(wordToGuess);
-
+            // set shown word with underlines
+            showWord.setText(wordDisplay.toString());
             for (int i = 0; i < randomWord.length(); i++) {
                 if (randomWord.charAt(i) == letter.charAt(0)) {
                     wordDisplay.setCharAt(i, letter.charAt(0));
+                    showWord.setText(wordDisplay.toString());
                 }
             }
             System.out.println("Letter is in word: " + wordToGuess);
             wordToGuess = wordDisplay.toString();
             System.out.println("Letter is in word: " + wordToGuess);
 
-            // Überprüfen, ob das Wort komplett geraten wurde
             if (wordToGuess.equals(randomWord)) {
                 System.out.println("Congratulations! You've won.");
-                // Hier können Sie den Code für einen Gewinnzustand hinzufügen
             }
         } else {
             System.out.println("Letter is not in word");

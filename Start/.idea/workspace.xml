@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="WIP">
-      <change afterPath="$PROJECT_DIR$/src/HangmanGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HangmanGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/words.txt" afterDir="false" />
+    <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hangman.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hangman.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/hangman.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/hangman.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/hangman1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/hangman1.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pictures/hangman2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/hangman2.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HangmanGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/HangmanGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HangmanGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HangmanGUI.java" afterDir="false" />
     </list>
     <list id="6b452b1e-a90d-4853-bc01-01425755baa6" name="Changes by myria" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -544,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696943551809</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="WIP game mode">
+      <created>1697030701766</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697030701766</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -584,7 +585,8 @@
     <MESSAGE value="bruchrechner" />
     <MESSAGE value="Finished Bruchrechner" />
     <MESSAGE value="WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
+    <MESSAGE value="WIP game mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP game mode" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
