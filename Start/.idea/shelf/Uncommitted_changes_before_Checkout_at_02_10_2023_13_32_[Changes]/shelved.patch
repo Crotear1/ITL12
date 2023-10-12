@@ -1,0 +1,14 @@
+Index: src/transfer.java
+===================================================================
+diff --git a/src/transfer.java b/src/transfer.java
+--- a/src/transfer.java	
++++ b/src/transfer.java	
+@@ -14,7 +14,7 @@
+ 
+ 
+     public transfer() {
+-        frame = new JFrame("Deposit");
++        frame = new JFrame("Transfer");
+         frame.setContentPane(panel1);
+         frame.pack();
+         frame.setVisible(showOverlay);
