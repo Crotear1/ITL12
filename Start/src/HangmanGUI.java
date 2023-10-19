@@ -16,6 +16,8 @@ public class HangmanGUI {
     private JButton newWordButton;
     private JTextArea textArea1;
     private JLabel trys;
+    private JButton wortAnzeigenButton;
+    private JButton wortAusblendenButton;
     private int wrongGuesses;
     private int guessesLeft;
     private String randomWord;
@@ -39,6 +41,22 @@ public class HangmanGUI {
                 getTheWord();
                 textArea1.setText("");
                 textField1.setText("");
+            }
+        });
+
+        // function to show word
+        wortAnzeigenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showWord.setText(randomWord);
+
+            }
+        });
+
+        wortAusblendenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showWord.setText(wordToGuess.replaceAll(".(?!$)", "$0 "));
             }
         });
     }
