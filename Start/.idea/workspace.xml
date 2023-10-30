@@ -4,10 +4,15 @@
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Start/Buchhaltung.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Buchhaltung.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Start/Datenbank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Datenbank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Start/Transaktion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Buchhaltung.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buchhaltung.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Buchhaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buchhaltung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transaktion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaktion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Datenbank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Datenbank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transaktion.java" beforeDir="false" />
+    </list>
+    <list id="28d59f15-32a4-48f4-b6f7-009736b01947" name="Changes by myria" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Datenbank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Datenbank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +43,22 @@
         <option value="main" />
       </list>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Datenbank.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="1" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="5" end1="5" start2="6" end2="8" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="11" end1="11" start2="14" end2="15" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="13" end1="14" start2="17" end2="18" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="19" end1="20" start2="23" end2="31" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="23" end1="23" start2="34" end2="36" changelist="28d59f15-32a4-48f4-b6f7-009736b01947" />
+        <range start1="24" end1="28" start2="37" end2="39" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="29" end1="30" start2="40" end2="42" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="31" end1="39" start2="43" end2="54" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+        <range start1="41" end1="41" start2="56" end2="58" changelist="cfb315f9-6a13-4e48-a337-e081d6b79614" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -75,6 +96,17 @@
       <updated>1694544381209</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Datenbank.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
