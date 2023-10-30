@@ -5,9 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Datenbank {
+    final int Kontonummer = 1;
+
     private Connection connection;
 
     public Datenbank() {
@@ -43,6 +46,16 @@ public class Datenbank {
             e.printStackTrace();
         }
         return  new ArrayList<>();
+    }
+
+    public void transaktionSpeichern(int Betrag, Date Datum, String Art, Boolean PlusMinus) {
+        try {
+            String sqlQuery = "INSERT INTO Transaktionen (Kontonummer, Datum, Art, Betrag, PlusMinus) VALUES (" + Kontonummer + ", '" + Datum + "', '" + Art + "', '" + Betrag + "', '" + PlusMinus + "')";
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sqlQuery);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void schließeVerbindung() {

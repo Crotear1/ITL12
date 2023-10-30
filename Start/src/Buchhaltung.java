@@ -10,6 +10,7 @@ public class Buchhaltung {
     private JTextField textField5;
     private JTextField textField6;
     private JButton buchenButton;
+    private JPanel panel1;
     private JList list1;
 
     private DefaultTableModel tableModel = new DefaultTableModel();
@@ -21,8 +22,12 @@ public class Buchhaltung {
             // create a new transaction object
             // save the transaction to the database
             // update the table
+            Datenbank datenbank = new Datenbank();
+            datenbank.transaktionSpeichern(Integer.parseInt(textField4.getText()), null, textField5.getText(), Boolean.parseBoolean(textField6.getText()));
+
             ladeTransaktionen();
         });
+
 
         table1.setModel(tableModel);
         tableModel.addColumn("TransaktionsID");
@@ -34,13 +39,21 @@ public class Buchhaltung {
 
     public static void main(String[] args) {
         Buchhaltung buchhaltung = new Buchhaltung();
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Buchhaltung");
-            frame.setContentPane(buchhaltung.table1);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
-        });
+        JFrame frame = new JFrame("HangmanGUI");
+
+        // Create a new JPanel to hold both table1 and panel1
+        JPanel combinedPanel = new JPanel(new BorderLayout());
+
+        // Add table1 and panel1 to the combinedPanel
+        combinedPanel.add(buchhaltung.table1, BorderLayout.NORTH);
+        combinedPanel.add(new Buchhaltung().panel1, BorderLayout.CENTER);
+
+        // Set the combinedPanel as the content pane
+        frame.setContentPane(combinedPanel);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
 
         Datenbank datenbank = new Datenbank();
         datenbank.verbindeDatenbank();
