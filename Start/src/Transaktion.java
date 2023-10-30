@@ -69,6 +69,6 @@ public class Transaktion {
 
     public void transaktionVerwalten() {
         // TODO implement here
-        
+
     }
 }

@@ -9,6 +9,8 @@ public class Main {
         }
         String jdbcUrl = "jdbc:mariadb://localhost:3306/buchhaltung?user=root&password=123";
 
+
+
         try (Connection connection = DriverManager.getConnection(jdbcUrl);
              Statement statement = connection.createStatement()) {
 
