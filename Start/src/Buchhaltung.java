@@ -1,16 +1,19 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.sql. * ;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Buchhaltung {
     private JTable table1;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
+    private JTextField betrag;
+    private JTextField art;
+    private JTextField datum;
     private JButton buchenButton;
     private JPanel panel1;
+    private JComboBox comboBox1;
+
     private JList list1;
 
     private DefaultTableModel tableModel = new DefaultTableModel();
@@ -22,8 +25,17 @@ public class Buchhaltung {
             // create a new transaction object
             // save the transaction to the database
             // update the table
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+            LocalDate parsedDate = LocalDate.parse(datum.getText(), formatter);
+
             Datenbank datenbank = new Datenbank();
-            datenbank.transaktionSpeichern(Integer.parseInt(textField4.getText()), null, textField5.getText(), Boolean.parseBoolean(textField6.getText()));
+            if (comboBox1.getSelectedItem().toString().equals("Einnahme"))
+                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate , art.getText(), true);
+            else if (comboBox1.getSelectedItem().toString().equals("Ausgabe")) {
+                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate , art.getText(), false);
+            }
 
             ladeTransaktionen();
         });
@@ -35,11 +47,14 @@ public class Buchhaltung {
         tableModel.addColumn("Datum");
         tableModel.addColumn("Kategorie");
         tableModel.addColumn("Beschreibung");
+        tableModel.addColumn("PlusMinus");
+        comboBox1.addItem("Einnahme");
+        comboBox1.addItem("Ausgabe");
     }
 
     public static void main(String[] args) {
         Buchhaltung buchhaltung = new Buchhaltung();
-        JFrame frame = new JFrame("HangmanGUI");
+        JFrame frame = new JFrame("Buchhaltung GUI");
 
         // Create a new JPanel to hold both table1 and panel1
         JPanel combinedPanel = new JPanel(new BorderLayout());
@@ -58,11 +73,16 @@ public class Buchhaltung {
         Datenbank datenbank = new Datenbank();
         datenbank.verbindeDatenbank();
         buchhaltung.ladeTransaktionen();
+
     }
 
     public void ladeTransaktionen() {
         // get all data from the database and put it into the table
         Datenbank datenbank = new Datenbank();
+
+        // clear table
+
+
         this.tableData = datenbank.getTransaktionen();
         tableModel.addRow(this.tableData.toArray());
 

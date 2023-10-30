@@ -1,12 +1,10 @@
-import javax.swing.table.DefaultTableModel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class Datenbank {
     final int Kontonummer = 1;
@@ -48,7 +46,7 @@ public class Datenbank {
         return  new ArrayList<>();
     }
 
-    public void transaktionSpeichern(int Betrag, Date Datum, String Art, Boolean PlusMinus) {
+    public void transaktionSpeichern(int Betrag, LocalDate Datum, String Art, Boolean PlusMinus) {
         try {
             String sqlQuery = "INSERT INTO Transaktionen (Kontonummer, Datum, Art, Betrag, PlusMinus) VALUES (" + Kontonummer + ", '" + Datum + "', '" + Art + "', '" + Betrag + "', '" + PlusMinus + "')";
             Statement statement = connection.createStatement();
