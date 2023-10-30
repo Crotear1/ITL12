@@ -7,19 +7,19 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        String jdbcUrl = "jdbc:mariadb://localhost:3306/uebungen?user=root&password=123";
+        String jdbcUrl = "jdbc:mariadb://localhost:3306/buchhaltung?user=root&password=123";
 
         try (Connection connection = DriverManager.getConnection(jdbcUrl);
              Statement statement = connection.createStatement()) {
 
-            String sqlQuery = "SELECT * FROM t_lager";
+            String sqlQuery = "SELECT * FROM Transaktionen";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
             while (resultSet.next()) {
-                Integer id = resultSet.getInt("id");
-                Integer name = resultSet.getInt("stueck");
+                Integer id = resultSet.getInt("TransaktionsID");
+                Integer name = resultSet.getInt("Betrag");
 
-                System.out.println("Name: " + id + " - " + name);
+                System.out.println(id + " " + name);
             }
 
         } catch (SQLException e) {
