@@ -29,16 +29,26 @@ public class Datenbank {
 
     public ArrayList<String> getTransaktionen() {
         try {
-            String sqlQuery = "SELECT TransaktionsID, Betrag FROM Transaktionen";
+            String sqlQuery = "SELECT TransaktionsID, Betrag, Datum, Art, PlusMinus FROM Transaktionen";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
             ArrayList<String> transaktionen =  new ArrayList<>();
+
             while (resultSet.next()) {
                 Integer id = resultSet.getInt("TransaktionsID");
                 Double betrag = resultSet.getDouble("Betrag");
-                transaktionen.add("TransaktionsID: " + id + ", Betrag: " + betrag);
+                LocalDate datum = resultSet.getDate("Datum").toLocalDate();
+                String art = resultSet.getString("Art");
+                Boolean plusMinus = resultSet.getBoolean("PlusMinus");
+                if (plusMinus) {
+                    betrag = betrag * -1;
+                } else {
+                    betrag = betrag * 1;
+                }
+                transaktionen.add("TransaktionsID: " + id + ", Betrag: " + betrag + ", Datum: " + datum + ", Art: " + art);
             }
+            System.out.println(transaktionen);
             return transaktionen;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -51,6 +61,7 @@ public class Datenbank {
             String sqlQuery = "INSERT INTO Transaktionen (Kontonummer, Datum, Art, Betrag, PlusMinus) VALUES (" + Kontonummer + ", '" + Datum + "', '" + Art + "', '" + Betrag + "', '" + PlusMinus + "')";
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlQuery);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

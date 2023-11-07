@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfb315f9-6a13-4e48-a337-e081d6b79614" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DatabaseToolSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DatabaseToolSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Buchhaltung.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Buchhaltung.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Start/Datenbank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Start/Datenbank.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Buchhaltung.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buchhaltung.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Buchhaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Buchhaltung.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Datenbank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Datenbank.java" afterDir="false" />

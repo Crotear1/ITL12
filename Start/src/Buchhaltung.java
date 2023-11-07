@@ -14,17 +14,37 @@ public class Buchhaltung {
     private JPanel panel1;
     private JComboBox comboBox1;
 
-    private JList list1;
-
     private DefaultTableModel tableModel = new DefaultTableModel();
     private ArrayList<String> tableData;
 
     public Buchhaltung(){
         buchenButton.addActionListener(e -> {
-            // get the values from the text fields
-            // create a new transaction object
-            // save the transaction to the database
-            // update the table
+            if (betrag.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie einen Betrag ein.");
+                return;
+            }
+            if (art.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie eine Art ein.");
+                return;
+            }
+            if (datum.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie ein Datum ein.");
+                return;
+            }
+            try {
+                Integer.parseInt(betrag.getText());
+            } catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie eine richtige Zahl beim Betrag ein");
+                return;
+            }
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+                LocalDate parsedDate = LocalDate.parse(datum.getText(), formatter);
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie ein gültiges Datum ein.");
+                return;
+            }
+
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
@@ -37,6 +57,10 @@ public class Buchhaltung {
                 datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate , art.getText(), false);
             }
 
+            // Reset fields
+            betrag.setText("");
+            art.setText("");
+            datum.setText("");
             ladeTransaktionen();
         });
 
@@ -46,8 +70,6 @@ public class Buchhaltung {
         tableModel.addColumn("Betrag");
         tableModel.addColumn("Datum");
         tableModel.addColumn("Kategorie");
-        tableModel.addColumn("Beschreibung");
-        tableModel.addColumn("PlusMinus");
         comboBox1.addItem("Einnahme");
         comboBox1.addItem("Ausgabe");
     }
@@ -77,15 +99,18 @@ public class Buchhaltung {
     }
 
     public void ladeTransaktionen() {
-        // get all data from the database and put it into the table
+        // load the transactions from the database
+        // update the table
         Datenbank datenbank = new Datenbank();
+        datenbank.verbindeDatenbank();
 
-        // clear table
-
-
-        this.tableData = datenbank.getTransaktionen();
-        tableModel.addRow(this.tableData.toArray());
-
+        tableModel.addRow(new String[]{"TransaktionsID", "Betrag", "Datum", "Kategorie"});
+        tableData = datenbank.getTransaktionen();
+        for (String transaktion : tableData) {
+            String[] split = transaktion.split(",");
+            tableModel.addRow(split);
+        }
+        datenbank.schließeVerbindung();
     }
 
 }
