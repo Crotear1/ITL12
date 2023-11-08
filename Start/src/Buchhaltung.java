@@ -16,8 +16,17 @@ public class Buchhaltung {
 
     private DefaultTableModel tableModel = new DefaultTableModel();
     private ArrayList<String> tableData;
+    private Datenbank datenbank;
 
-    public Buchhaltung(){
+    public Buchhaltung() {
+        table1.setModel(tableModel);
+        tableModel.addColumn("TransaktionsID");
+        tableModel.addColumn("Betrag");
+        tableModel.addColumn("Datum");
+        tableModel.addColumn("Kategorie");
+        comboBox1.addItem("Einnahme");
+        comboBox1.addItem("Ausgabe");
+
         buchenButton.addActionListener(e -> {
             if (betrag.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Bitte geben Sie einen Betrag ein.");
@@ -52,9 +61,9 @@ public class Buchhaltung {
 
             Datenbank datenbank = new Datenbank();
             if (comboBox1.getSelectedItem().toString().equals("Einnahme"))
-                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate , art.getText(), true);
+                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate, art.getText(), true);
             else if (comboBox1.getSelectedItem().toString().equals("Ausgabe")) {
-                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate , art.getText(), false);
+                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate, art.getText(), false);
             }
 
             // Reset fields
@@ -63,54 +72,30 @@ public class Buchhaltung {
             datum.setText("");
             ladeTransaktionen();
         });
+        this.datenbank = new Datenbank();
+        this.datenbank.verbindeDatenbank();
 
-
-        table1.setModel(tableModel);
-        tableModel.addColumn("TransaktionsID");
-        tableModel.addColumn("Betrag");
-        tableModel.addColumn("Datum");
-        tableModel.addColumn("Kategorie");
-        comboBox1.addItem("Einnahme");
-        comboBox1.addItem("Ausgabe");
+        ladeTransaktionen();
     }
 
     public static void main(String[] args) {
-        Buchhaltung buchhaltung = new Buchhaltung();
-        JFrame frame = new JFrame("Buchhaltung GUI");
-
-        // Create a new JPanel to hold both table1 and panel1
-        JPanel combinedPanel = new JPanel(new BorderLayout());
-
-        // Add table1 and panel1 to the combinedPanel
-        combinedPanel.add(buchhaltung.table1, BorderLayout.NORTH);
-        combinedPanel.add(new Buchhaltung().panel1, BorderLayout.CENTER);
-
-        // Set the combinedPanel as the content pane
-        frame.setContentPane(combinedPanel);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-
-        Datenbank datenbank = new Datenbank();
-        datenbank.verbindeDatenbank();
-        buchhaltung.ladeTransaktionen();
-
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Buchhaltung GUI");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.add(new Buchhaltung().panel1);
+            frame.pack();
+            frame.setVisible(true);
+        });
     }
 
     public void ladeTransaktionen() {
-        // load the transactions from the database
-        // update the table
-        Datenbank datenbank = new Datenbank();
-        datenbank.verbindeDatenbank();
-
-        tableModel.addRow(new String[]{"TransaktionsID", "Betrag", "Datum", "Kategorie"});
+        tableModel.setRowCount(0);
         tableData = datenbank.getTransaktionen();
+        tableModel.addRow(new String[]{"TransaktionsID", "Betrag", "Datum", "Kategorie"});
         for (String transaktion : tableData) {
             String[] split = transaktion.split(",");
             tableModel.addRow(split);
         }
-        datenbank.schließeVerbindung();
     }
 
 }
