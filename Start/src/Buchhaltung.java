@@ -17,6 +17,10 @@ public class Buchhaltung {
 
     private JTextField searchField;
     private JButton resetButtonButton;
+    private JTextField change1;
+    private JButton ändernButton;
+    private JComboBox comboid;
+    private JButton deleteButton;
 
     private DefaultTableModel tableModel = new DefaultTableModel();
     private ArrayList<String> tableData;
@@ -33,7 +37,16 @@ public class Buchhaltung {
 
         searchButton.addActionListener( e -> {
             tableModel.setRowCount(0);
-            //format date to correct format
+            //format date to correct format + error handling
+
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+                LocalDate parsedDate = LocalDate.parse(searchField.getText(), formatter);
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie ein gültiges Datum ein.");
+                return;
+            }
+
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
             LocalDate parsedDate = LocalDate.parse(searchField.getText(), formatter);
             System.out.println(parsedDate);
@@ -49,6 +62,36 @@ public class Buchhaltung {
 
         resetButtonButton.addActionListener(e -> {
             ladeTransaktionen();
+        });
+
+        comboid.addActionListener(e -> {
+            int id = (int) comboid.getSelectedItem();
+            change1.setText(datenbank.getBetrag(id)+"");
+        });
+
+        ändernButton.addActionListener(e -> {
+            if (change1.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie einen Betrag ein.");
+                return;
+            }
+            try {
+                Integer.parseInt(change1.getText());
+            } catch (NumberFormatException exception) {
+                JOptionPane.showMessageDialog(null, "Bitte geben Sie eine richtige Zahl beim Betrag ein");
+                return;
+            }
+            int id = (int) comboid.getSelectedItem();
+            datenbank.updateBetrag(id, Integer.parseInt(change1.getText()));
+            System.out.println("clicked");
+            ladeTransaktionen();
+            ladeComboBox();
+        });
+
+        deleteButton.addActionListener(e -> {
+            int id = (int) comboid.getSelectedItem();
+            datenbank.deleteTransaktion(id);
+            ladeTransaktionen();
+            ladeComboBox();
         });
 
         buchenButton.addActionListener(e -> {
@@ -100,6 +143,7 @@ public class Buchhaltung {
         this.datenbank.verbindeDatenbank();
 
         ladeTransaktionen();
+        ladeComboBox();
     }
 
     public static void main(String[] args) {
@@ -120,6 +164,15 @@ public class Buchhaltung {
             String[] split = transaktion.split(",");
             tableModel.addRow(split);
         }
+    }
+
+    public void ladeComboBox() {
+        ArrayList<Integer> ids = datenbank.getIds();
+        for (int id : ids) {
+            comboid.addItem(id);
+            System.out.println(id);
+        }
+
     }
 
 }

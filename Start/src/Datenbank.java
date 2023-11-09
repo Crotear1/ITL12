@@ -96,6 +96,68 @@ public class Datenbank {
         return  new ArrayList<>();
     }
 
+    public ArrayList<Integer> getIds() {
+        try {
+            String sqlQuery = "SELECT TransaktionsID FROM Transaktionen WHERE DATEDIFF(CURDATE(), Datum) < 1";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+            ArrayList<Integer> transaktionen =  new ArrayList<>();
+
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("TransaktionsID");
+
+                transaktionen.add(id);
+            }
+            System.out.println(transaktionen);
+            return transaktionen;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return  new ArrayList<>();
+    }
+
+    public Integer getBetrag(int id) {
+        try {
+            String sqlQuery = "SELECT Betrag FROM Transaktionen WHERE TransaktionsID = " + id;
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+           int betrag = 0;
+
+            while (resultSet.next()) {
+                betrag = resultSet.getInt("Betrag");
+            }
+
+            return betrag;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
+    public void updateBetrag(int id, double betrag){
+        try {
+            String sqlQuery = "UPDATE Transaktionen SET Betrag = " + betrag + " WHERE TransaktionsID = " + id;
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteTransaktion(int id) {
+        try {
+            String sqlQuery = "DELETE FROM Transaktionen WHERE TransaktionsID = " + id;
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void schließeVerbindung() {
         try {
