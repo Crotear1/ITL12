@@ -38,7 +38,6 @@ public class Buchhaltung {
         searchButton.addActionListener( e -> {
             tableModel.setRowCount(0);
             //format date to correct format + error handling
-
             try {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
                 LocalDate parsedDate = LocalDate.parse(searchField.getText(), formatter);

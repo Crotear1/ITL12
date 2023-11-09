@@ -12,7 +12,6 @@ public class Datenbank {
     private Connection connection;
 
     public Datenbank() {
-        // Konstruktor: Hier können Sie die Datenbankverbindung initialisieren
         verbindeDatenbank();
     }
 
