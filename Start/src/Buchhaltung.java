@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -14,6 +13,11 @@ public class Buchhaltung {
     private JPanel panel1;
     private JComboBox comboBox1;
 
+    private JButton searchButton;
+
+    private JTextField searchField;
+    private JButton resetButtonButton;
+
     private DefaultTableModel tableModel = new DefaultTableModel();
     private ArrayList<String> tableData;
     private Datenbank datenbank;
@@ -26,6 +30,26 @@ public class Buchhaltung {
         tableModel.addColumn("Kategorie");
         comboBox1.addItem("Einnahme");
         comboBox1.addItem("Ausgabe");
+
+        searchButton.addActionListener( e -> {
+            tableModel.setRowCount(0);
+            //format date to correct format
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+            LocalDate parsedDate = LocalDate.parse(searchField.getText(), formatter);
+            System.out.println(parsedDate);
+
+
+            tableData = datenbank.getTransaktionenWithDate(parsedDate);
+            tableModel.addRow(new String[]{"TransaktionsID", "Betrag", "Datum", "Kategorie"});
+            for (String transaktion : tableData) {
+                String[] split = transaktion.split(",");
+                tableModel.addRow(split);
+            }
+        });
+
+        resetButtonButton.addActionListener(e -> {
+            ladeTransaktionen();
+        });
 
         buchenButton.addActionListener(e -> {
             if (betrag.getText().equals("")) {

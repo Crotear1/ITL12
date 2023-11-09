@@ -67,6 +67,36 @@ public class Datenbank {
         }
     }
 
+    public ArrayList<String> getTransaktionenWithDate(LocalDate date) {
+        try {
+            String sqlQuery = "SELECT TransaktionsID, Betrag, Datum, Art, PlusMinus FROM Transaktionen WHERE Datum = '" + date + "'";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+            ArrayList<String> transaktionen =  new ArrayList<>();
+
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("TransaktionsID");
+                Double betrag = resultSet.getDouble("Betrag");
+                LocalDate datum = resultSet.getDate("Datum").toLocalDate();
+                String art = resultSet.getString("Art");
+                Boolean plusMinus = resultSet.getBoolean("PlusMinus");
+                if (plusMinus) {
+                    betrag = betrag * -1;
+                } else {
+                    betrag = betrag * 1;
+                }
+                transaktionen.add("TransaktionsID: " + id + ", Betrag: " + betrag + ", Datum: " + datum + ", Art: " + art);
+            }
+            System.out.println(transaktionen);
+            return transaktionen;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  new ArrayList<>();
+    }
+
+
     public void schließeVerbindung() {
         try {
             if (connection != null) {
