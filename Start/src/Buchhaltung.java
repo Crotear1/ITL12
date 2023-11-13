@@ -127,9 +127,9 @@ public class Buchhaltung {
 
             Datenbank datenbank = new Datenbank();
             if (comboBox1.getSelectedItem().toString().equals("Einnahme"))
-                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate, art.getText(), true);
+                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate, art.getText(), 0);
             else if (comboBox1.getSelectedItem().toString().equals("Ausgabe")) {
-                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate, art.getText(), false);
+                datenbank.transaktionSpeichern(Integer.parseInt(betrag.getText()), parsedDate, art.getText(), 1);
             }
 
             // Reset fields

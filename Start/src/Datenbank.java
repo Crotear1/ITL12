@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Datenbank {
-    final int Kontonummer = 1;
+    final int Kontonummer = 0;
 
     private Connection connection;
 
@@ -55,7 +55,7 @@ public class Datenbank {
         return  new ArrayList<>();
     }
 
-    public void transaktionSpeichern(int Betrag, LocalDate Datum, String Art, Boolean PlusMinus) {
+    public void transaktionSpeichern(int Betrag, LocalDate Datum, String Art, int PlusMinus) {
         try {
             String sqlQuery = "INSERT INTO Transaktionen (Kontonummer, Datum, Art, Betrag, PlusMinus) VALUES (" + Kontonummer + ", '" + Datum + "', '" + Art + "', '" + Betrag + "', '" + PlusMinus + "')";
             Statement statement = connection.createStatement();
